@@ -1,18 +1,28 @@
 #! /usr/bin/env python3
-import urllib.parse
+
+import sys
+
+if ((3, 0) <= sys.version_info <= (3, 9)):
+    from urllib.parse import urlparse
+elif ((2, 0) <= sys.version_info <= (2, 9)):
+    from urlparse import urlparse
 import tempfile
 import json
-import urllib.request
-import hashlib
+from urllib2 import urlopen
 import os
 import sys
 import time
 import re
 
+pip install PyPDF2
+from pyPdf import PdfFileWriter, PdfFileReader
+from PyPdf.generic import NameObject, DictionaryObject, ArrayObject, NumberObject
+
 from PyPDF2 import PdfFileWriter, PdfFileReader
 from PyPDF2.generic import NameObject, DictionaryObject, ArrayObject, NumberObject
 
 from multiprocessing.pool import ThreadPool
+
 
 language = "en_US"
 roletypeid = 2 # 3 for instructor
